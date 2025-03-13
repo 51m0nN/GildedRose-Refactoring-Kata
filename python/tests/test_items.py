@@ -1,4 +1,5 @@
-from ..gilded_rose import Item, GildedRose
+from ..gilded_rose.stock import Item
+from ..gilded_rose.manager import GildedRose
 
 
 def test_foo():
