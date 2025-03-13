@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 from gilded_rose import Item, GildedRose
 
 if __name__ == "__main__":
