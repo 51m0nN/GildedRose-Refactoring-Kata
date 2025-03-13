@@ -121,6 +121,10 @@ def test_backstage_pass():
     assert item.sell_in == -1
     assert item.quality == 0  # quality is 0 after the gig
 
+    gilded_rose.update_quality()
+    assert item.sell_in == -2
+    assert item.quality == 0  # quality is 0 after the gig
+
 
 def test_conjured_mana_cake():
     run_for_standard_item(name="Conjured Mana Cake")

@@ -3,6 +3,7 @@ from approvaltests.reporters import PythonNativeReporter
 
 from ..gilded_rose.manager import GildedRose
 
+
 def tests_e2e_approval(all_items):
     reporter = PythonNativeReporter()
     gilded_rose = GildedRose(all_items)
