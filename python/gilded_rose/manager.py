@@ -1,4 +1,4 @@
-from stock import Item
+from .stock import Item
 
 
 class GildedRose:
