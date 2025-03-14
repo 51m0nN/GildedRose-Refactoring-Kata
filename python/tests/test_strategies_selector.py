@@ -6,6 +6,7 @@ from ..gilded_rose.strategies.updaters import (
     update_brie_item,
     update_sulfuras_item,
     update_standard_item,
+    update_conjured_item,
 )
 
 
@@ -16,6 +17,7 @@ from ..gilded_rose.strategies.updaters import (
         (Item(name="Aged Brie", sell_in=2, quality=45), update_brie_item),
         (Item(name="Sulfuras, Hand of Ragnaros", sell_in=2, quality=80), update_sulfuras_item),
         (Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=11, quality=20), update_backstage_pass_item),
+        (Item(name="Conjured Mana Cake", sell_in=2, quality=4), update_conjured_item),
     ],
 )
 def test_selector(item, expected_strategy):
