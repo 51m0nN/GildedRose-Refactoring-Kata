@@ -1,5 +1,13 @@
 class Item:
-    def __init__(self, name, sell_in, quality):
+    def __init__(self, name: str, sell_in: int, quality: int):
+        """ An Item of stock managing its quality as time flows
+
+        The Ork has long gone, he will never know I added this, and the nice type hints...
+
+        :param name:
+        :param sell_in:
+        :param quality:
+        """
         self.name = name
         self.sell_in = sell_in
         self.quality = quality
