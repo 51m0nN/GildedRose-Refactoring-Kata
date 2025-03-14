@@ -1,8 +1,17 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class Item:
-    def __init__(self, name, sell_in, quality):
-        self.name = name
-        self.sell_in = sell_in
-        self.quality = quality
+    """An Item of stock managing its quality as time flows
+
+    The Ork has long gone, he will never know I converted this to a dataclass - which is a more modern way of dealing
+    with this, added this docstring, and the nice type hints...
+    """
+
+    name: str
+    sell_in: int
+    quality: int
 
     def __repr__(self):
         return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
