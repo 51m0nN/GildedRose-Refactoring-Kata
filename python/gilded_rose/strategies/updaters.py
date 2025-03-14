@@ -1,5 +1,5 @@
 from typing import Protocol, runtime_checkable
-from .stock import Item
+from ..stock import Item
 
 
 @runtime_checkable

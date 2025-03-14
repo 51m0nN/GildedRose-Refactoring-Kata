@@ -1,5 +1,5 @@
 from ..gilded_rose.stock import Item
-from ..gilded_rose.update_strategies import (
+from ..gilded_rose.strategies.updaters import (
     SupportsUpdatingItemsStrategy,
     StandardUpdaterStrategy,
     BrieUpdaterStrategy,
