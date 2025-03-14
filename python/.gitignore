@@ -3,3 +3,4 @@
 .coverage
 .idea/
 *.iml
+/tests/.approval_tests_temp/.approved_files.log
