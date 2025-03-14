@@ -127,4 +127,22 @@ def test_backstage_pass():
 
 
 def test_conjured_mana_cake():
-    run_for_standard_item(name="Conjured Mana Cake")
+    gilded_rose, item = setup_gilded_rose(Item(name="Conjured Mana Cake", sell_in=2, quality=4))
+    assert item.sell_in == 2
+    assert item.quality == 4
+
+    gilded_rose.update_quality()
+    assert item.sell_in == 1
+    assert item.quality == 2
+
+    gilded_rose.update_quality()
+    assert item.sell_in == 0
+    assert item.quality == 0
+
+    gilded_rose.update_quality()
+    assert item.sell_in == -1
+    assert item.quality == 0  # Note the reduction in quality by 2
+
+    gilded_rose.update_quality()
+    assert item.sell_in == -2
+    assert item.quality == 0  # Note the quality stays at 0

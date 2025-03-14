@@ -5,6 +5,7 @@ from ..gilded_rose.strategies.updaters import (
     BrieUpdaterStrategy,
     SulfurasUpdaterStrategy,
     BackstagePassUpdaterStrategy,
+    ConjuredUpdaterStrategy,
 )
 
 
@@ -103,3 +104,27 @@ def test_test_backstage_pass_updater_strategy():
     updater.update_item(item)
     assert item.sell_in == -2
     assert item.quality == 0  # quality is 0 after the gig
+
+
+def test_conjured_updater_strategy():
+    updater = ConjuredUpdaterStrategy()
+    isinstance(updater, SupportsUpdatingItemsStrategy)
+    item = Item(name="Conjured Mana Cake", sell_in=2, quality=4)
+    assert item.sell_in == 2
+    assert item.quality == 4
+
+    updater.update_item(item)
+    assert item.sell_in == 1
+    assert item.quality == 2
+
+    updater.update_item(item)
+    assert item.sell_in == 0
+    assert item.quality == 0
+
+    updater.update_item(item)
+    assert item.sell_in == -1
+    assert item.quality == 0  # Note the reduction in quality by 2
+
+    updater.update_item(item)
+    assert item.sell_in == -2
+    assert item.quality == 0  # Note the quality stays at 0

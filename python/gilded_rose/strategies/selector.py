@@ -5,6 +5,7 @@ from .updaters import (
     BrieUpdaterStrategy,
     SulfurasUpdaterStrategy,
     BackstagePassUpdaterStrategy,
+    ConjuredUpdaterStrategy,
 )
 
 
@@ -13,6 +14,7 @@ class StrategySelector:
         "Aged Brie": BrieUpdaterStrategy,
         "Sulfuras, Hand of Ragnaros": SulfurasUpdaterStrategy,
         "Backstage passes to a TAFKAL80ETC concert": BackstagePassUpdaterStrategy,
+        "Conjured Mana Cake": ConjuredUpdaterStrategy,
     }
 
     @staticmethod
