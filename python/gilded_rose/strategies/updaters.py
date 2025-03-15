@@ -51,3 +51,12 @@ def update_standard_item(item: Item) -> None:
         item.quality = item.quality - 1
     if item.sell_in < 0 < item.quality:
         item.quality = item.quality - 1
+
+
+def update_conjured_item(item: Item) -> None:
+    """Quality declines at twice the rate of a normal item"""
+    item.sell_in = item.sell_in - 1
+    if item.quality > 0:
+        item.quality = item.quality - 2
+    if item.sell_in < 0 < item.quality:
+        item.quality = item.quality - 2

@@ -1,7 +1,13 @@
 from typing import Callable, Optional
 
 from ..stock import Item
-from .updaters import update_sulfuras_item, update_brie_item, update_backstage_pass_item, update_standard_item
+from .updaters import (
+    update_sulfuras_item,
+    update_brie_item,
+    update_backstage_pass_item,
+    update_standard_item,
+    update_conjured_item,
+)
 
 
 class StrategySelector:
@@ -10,6 +16,7 @@ class StrategySelector:
         "Sulfuras, Hand of Ragnaros": update_sulfuras_item,
         "Aged Brie": update_brie_item,
         "Backstage passes to a TAFKAL80ETC concert": update_backstage_pass_item,
+        "Conjured Mana Cake": update_conjured_item,
     }
 
     @staticmethod
