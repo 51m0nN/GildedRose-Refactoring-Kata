@@ -3,7 +3,7 @@ from ..gilded_rose.strategies.updaters import (
     update_sulfuras_item,
     update_brie_item,
     update_backstage_pass_item,
-    update_standard_item
+    update_standard_item,
 )
 
 

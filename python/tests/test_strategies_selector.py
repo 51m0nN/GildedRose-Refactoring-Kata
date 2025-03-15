@@ -2,7 +2,12 @@ import pytest
 from ..gilded_rose.stock import Item
 from ..gilded_rose.strategies.selector import StrategySelector
 
-from ..gilded_rose.strategies.updaters import update_sulfuras_item, update_brie_item, update_backstage_pass_item, update_standard_item
+from ..gilded_rose.strategies.updaters import (
+    update_sulfuras_item,
+    update_brie_item,
+    update_backstage_pass_item,
+    update_standard_item,
+)
 
 
 @pytest.mark.parametrize(

@@ -1,12 +1,7 @@
 from typing import Callable, Optional
 
 from ..stock import Item
-from .updaters import (
-    update_sulfuras_item,
-    update_brie_item,
-    update_backstage_pass_item,
-    update_standard_item
-)
+from .updaters import update_sulfuras_item, update_brie_item, update_backstage_pass_item, update_standard_item
 
 
 class StrategySelector:
