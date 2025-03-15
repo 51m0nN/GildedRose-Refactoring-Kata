@@ -96,6 +96,7 @@ def test_backstage_pass():
     gilded_rose, item = setup_gilded_rose(
         Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=11, quality=20)
     )
+    gilded_rose.update_item_legacy = MagicMock()
     gilded_rose.update_quality()
     assert item.sell_in == 10
     assert item.quality == 21  # The sell_in was 11 when the function was called - hence this dropped by 1
@@ -125,6 +126,7 @@ def test_backstage_pass():
     gilded_rose.update_quality()
     assert item.sell_in == -1
     assert item.quality == 0  # quality is 0 after the gig
+    assert gilded_rose.update_item_legacy.assert_not_called
 
 
 def test_conjured_mana_cake():

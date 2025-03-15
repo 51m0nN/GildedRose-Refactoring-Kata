@@ -4,6 +4,7 @@ from ..stock import Item
 from .updaters import (
     update_sulfuras_item,
     update_brie_item,
+    update_backstage_pass_item,
 )
 
 
@@ -12,6 +13,7 @@ class StrategySelector:
     __special_strategies = {
         "Sulfuras, Hand of Ragnaros": update_sulfuras_item,
         "Aged Brie": update_brie_item,
+        "Backstage passes to a TAFKAL80ETC concert": update_backstage_pass_item,
     }
 
     @staticmethod
