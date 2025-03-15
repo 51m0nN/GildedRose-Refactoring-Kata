@@ -23,11 +23,8 @@ class StrategySelector:
     def select(item: Item) -> Optional[Callable]:
         """Will return the appropriate update strategy for the Item
 
-        Currently, no update strategies exist
-
-        Update strategies will begin with edge cases and move to generalisations last
+        Currently, all known update strategies for edge cases and standard items are complete
         """
-        """"""
         try:
             return StrategySelector.__special_strategies[item.name]
         except KeyError:
