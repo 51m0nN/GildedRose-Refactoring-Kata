@@ -52,6 +52,7 @@ def test_vest_item():
 def test_brie():
     """ "Aged Brie" actually increases in Quality the older it gets"""
     gilded_rose, item = setup_gilded_rose(Item(name="Aged Brie", sell_in=2, quality=45))
+    gilded_rose.update_item_legacy = MagicMock()
     assert item.sell_in == 2
     assert item.quality == 45
 
@@ -70,6 +71,7 @@ def test_brie():
     gilded_rose.update_quality()
     assert item.sell_in == -2
     assert item.quality == 50  # Quality can't exceed 50
+    assert gilded_rose.update_item_legacy.assert_not_called
 
 
 def test_elixir():
