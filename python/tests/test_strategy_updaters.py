@@ -3,6 +3,7 @@ from ..gilded_rose.strategies.updaters import (
     update_sulfuras_item,
     update_brie_item,
     update_backstage_pass_item,
+    update_standard_item
 )
 
 
@@ -71,3 +72,25 @@ def test_test_backstage_pass_updater_strategy():
     update_backstage_pass_item(item)
     assert item.sell_in == -2
     assert item.quality == 0  # quality is 0 after the gig
+
+
+def test_item_updater_strategy():
+    item = Item(name="+5 Dexterity Vest", sell_in=2, quality=4)
+    assert item.sell_in == 2
+    assert item.quality == 4
+
+    update_standard_item(item)
+    assert item.sell_in == 1
+    assert item.quality == 3
+
+    update_standard_item(item)
+    assert item.sell_in == 0
+    assert item.quality == 2
+
+    update_standard_item(item)
+    assert item.sell_in == -1
+    assert item.quality == 0  # Note the reduction in quality by 2
+
+    update_standard_item(item)
+    assert item.sell_in == -2
+    assert item.quality == 0  # Note the quality stays at 0

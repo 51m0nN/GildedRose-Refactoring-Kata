@@ -5,6 +5,7 @@ from .updaters import (
     update_sulfuras_item,
     update_brie_item,
     update_backstage_pass_item,
+    update_standard_item
 )
 
 
@@ -28,4 +29,4 @@ class StrategySelector:
         try:
             return StrategySelector.__special_strategies[item.name]
         except KeyError:
-            return None
+            return update_standard_item

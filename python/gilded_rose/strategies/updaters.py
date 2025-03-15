@@ -40,3 +40,14 @@ def update_backstage_pass_item(item: Item) -> None:
 
     if item.sell_in < 0:
         item.quality = 0
+
+
+def update_standard_item(item: Item) -> None:
+    """An item's quality goes down by one
+    Once its past its sell by date it quality goes down by 2 each time
+    """
+    item.sell_in = item.sell_in - 1
+    if item.quality > 0:
+        item.quality = item.quality - 1
+    if item.sell_in < 0 < item.quality:
+        item.quality = item.quality - 1

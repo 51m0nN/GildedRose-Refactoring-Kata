@@ -22,6 +22,7 @@ def test_foo():
 def run_for_standard_item(name: str):
     """Any non-special item should behave in this way..."""
     gilded_rose, item = setup_gilded_rose(Item(name=name, sell_in=2, quality=4))
+    gilded_rose.update_item_legacy = MagicMock()
     assert item.sell_in == 2
     assert item.quality == 4
 
@@ -40,6 +41,7 @@ def run_for_standard_item(name: str):
     gilded_rose.update_quality()
     assert item.sell_in == -2
     assert item.quality == 0  # Note the quality stays at 0
+    assert gilded_rose.update_item_legacy.assert_not_called
 
 
 def test_vest_item():

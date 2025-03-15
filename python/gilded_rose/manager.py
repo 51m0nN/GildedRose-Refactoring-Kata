@@ -18,11 +18,19 @@ class GildedRose:
 
     @staticmethod
     def update_item_legacy(item: Item) -> None:
-        """Separate the legacy code path into its own function
+        """***DEPRECATED***
+
+        Add update item functionality via strategies.updaters and strategies.selector
+
+        I would add @deprecated to this function a\t this point if I was running in 3.13.2
+
+        Separate the legacy code path into its own function
 
         Here be dragons!
         :param item:
         """
+        print("***DEPRECATED***")
+
         if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert":
             if item.quality > 0:
                 if item.name != "Sulfuras, Hand of Ragnaros":
