@@ -1,5 +1,6 @@
 from ..gilded_rose.stock import Item
 from ..gilded_rose.manager import GildedRose
+from unittest.mock import MagicMock
 
 
 def setup_gilded_rose(item: Item) -> (GildedRose, Item):
@@ -77,9 +78,11 @@ def test_elixir():
 
 def test_sulfuras():
     gilded_rose, item = setup_gilded_rose(Item(name="Sulfuras, Hand of Ragnaros", sell_in=2, quality=80))
+    gilded_rose.update_item_legacy = MagicMock()
     gilded_rose.update_quality()
     assert item.sell_in == 2  # Never needs to be sold, and never changes
     assert item.quality == 80  # Quality CAN exceed 50 if it's initialised at over 50
+    assert gilded_rose.update_item_legacy.assert_not_called
 
 
 def test_backstage_pass():
